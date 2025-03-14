@@ -13,7 +13,6 @@ This project is built with [Figma](https://www.figma.com/) which is one of the m
 Firstly, clone this repository on your desktop using the below command.
 
 ```groovy
-git clone https://github.com/skydoves/kmp-developer-roadmap
 ```
 
 ### Import the roadmap project
