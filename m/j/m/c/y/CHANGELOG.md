@@ -213,7 +213,6 @@
 * introduced language aliases to linguist
 
 ### Server
-
 * removed requirement for ingress setup, making it optional
 * bumped GRPC max message size from 4MB to 20MB
 * removed registry org and image name from generated charts, simplifying templates
