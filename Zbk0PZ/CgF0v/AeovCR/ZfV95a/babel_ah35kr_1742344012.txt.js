@@ -1,7 +1,6 @@
 var BrowserslistError = require('./error')
 
 function noop() {}
-
 module.exports = {
   loadQueries: function loadQueries() {
     throw new BrowserslistError(
