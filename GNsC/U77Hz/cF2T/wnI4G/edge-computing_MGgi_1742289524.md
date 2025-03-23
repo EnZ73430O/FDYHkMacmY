@@ -2,7 +2,6 @@ FROM --platform=$TARGETPLATFORM golang:1.20 as devel
 ARG BUILD_ARGS
 COPY / /go/src/
 RUN cd /go/src/ && make build-local BUILD_ARGS=$BUILD_ARGS
-
 FROM alpine:3.12.3 as certs
 RUN apk update && apk add ca-certificates
 
