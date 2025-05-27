@@ -15,7 +15,6 @@ You will need to enable the following APIs:
 * [Google Cloud Translation API](https://console.developers.google.com/apis/api/translate.googleapis.com/overview)
 
 
-```
 remotes::install_github("ropensci/googleLanguageR")
 setwd("tests/testthat")
 source("test_unit.R")
