@@ -1,5 +1,4 @@
 # Contributing to googleLanguageR
-
 Thank you for your interest in contributing to this project!
 
 To run unit tests, saved API calls are cached in the `tests/testthat/mock` folder.  These substitute for an API call to Google and avoid authentication.
