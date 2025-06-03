@@ -1,5 +1,4 @@
 schema_version = 1
-
 project {
   license        = "BUSL-1.1"
 
