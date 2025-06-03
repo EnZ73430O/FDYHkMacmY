@@ -24,4 +24,3 @@ source("test_unit.R")
 * Any contributors should be doing so for the joy of creating and sharing and advancing knowledge.  Treat each other with the respect this deserves.  
 * The main language is English. 
 * The community will tolerate everything but intolerance. It should be assumed everyone is trying to be tolerant until they repeatedly prove otherwise. 
-* Don't break any laws or copyrights during contributions, credit sources where it is due. 
