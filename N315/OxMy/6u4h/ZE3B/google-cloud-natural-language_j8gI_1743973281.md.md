@@ -8,7 +8,6 @@ The API calls to the Cloud Speech API and translation varies slightly, so test s
 To run integration tests that hit the API, you will need to add your own authentication service JSON file from Google Cloud projects.  Save this file to your computer and then set an environment variable `GL_AUTH` pointing to the file location. If not present, (such as on CRAN or Travis) the integration tests will be skipped.
 
 You will need to enable the following APIs:
-
 * [Google Cloud Speech API](https://console.developers.google.com/apis/api/speech.googleapis.com/overview)
 * [Google Cloud Natural Language API](https://console.developers.google.com/apis/api/language.googleapis.com/overview)
 * [Google Cloud Translation API](https://console.developers.google.com/apis/api/translate.googleapis.com/overview)
