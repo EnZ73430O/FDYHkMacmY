@@ -1,0 +1,30 @@
+[submodule "rapidjson"]
+	path = ext_libs/rapidjson
+	url = https://github.com/Tencent/rapidjson.git
+[submodule "ext_libs/spdlog"]
+	path = ext_libs/spdlog
+	url = https://github.com/gabime/spdlog.git
+[submodule "ext_libs/fmt"]
+	path = ext_libs/fmt
+	url = https://github.com/fmtlib/fmt.git
+[submodule "ext_libs/boost_math"]
+	path = ext_libs/boost_math
+	url = https://github.com/boostorg/math.git
+[submodule "ext_libs/zlib"]
+	path = ext_libs/zlib
+	url = https://github.com/madler/zlib.git
+[submodule "ext_libs/eigen"]
+	path = ext_libs/eigen
+	url = https://gitlab.com/libeigen/eigen.git
+[submodule "ext_libs/vcpkg"]
+	path = ext_libs/vcpkg
+	url = ../../microsoft/vcpkg.git
+[submodule "ext_libs/sse2neon"]
+	path = ext_libs/sse2neon/sse2neon
+	url = https://github.com/DLTcollab/sse2neon
+[submodule "ext_libs/ensmallen"]
+	path = ext_libs/ensmallen
+	url = https://github.com/mlpack/ensmallen.git
+[submodule "ext_libs/armadillo-code"]
+	path = ext_libs/armadillo-code
+	url = https://gitlab.com/conradsnicta/armadillo-code.git
