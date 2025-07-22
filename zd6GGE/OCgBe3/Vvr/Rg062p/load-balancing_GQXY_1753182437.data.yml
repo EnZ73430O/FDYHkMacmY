@@ -1,0 +1,80 @@
+version: 2
+builds:
+  - binary: fabio
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+      - linux
+      - freebsd
+      - netbsd
+      - openbsd
+      - windows
+    goarch:
+      - 386
+      - amd64
+      - arm
+      - arm64
+    goarm:
+      - 7
+archives:
+  - id: bin
+    name_template: '{{ .ProjectName }}-{{ .Version }}-{{ .Os }}_{{ .Arch }}'
+    formats:
+      - binary
+source:
+  enabled: true
+  name_template: '{{ .ProjectName }}-{{.Version }}.src'
+  prefix_template: '{{ .ProjectName }}-{{.Version }}/'
+checksum:
+  name_template: '{{.ProjectName}}-{{.Version}}.sha256'
+signs:
+  - artifacts: checksum
+    args:
+      - "--batch"
+      - "--local-user"
+      - "{{ .Env.GPG_FINGERPRINT }}"
+      - "--output"
+      - "${signature}"
+      - "--detach-sign"
+      - "${artifact}"
+dockers:
+  - dockerfile: Dockerfile-goreleaser
+    use: buildx
+    goos: linux
+    goarch: amd64
+    image_templates:
+      - 'fabiolb/fabio:latest-amd64'
+      - 'fabiolb/fabio:{{ .Version }}-amd64'
+    build_flag_templates:
+      - "--platform=linux/amd64"
+      - "--label=org.opencontainers.image.created={{.Date}}"
+      - "--label=org.opencontainers.image.title={{.ProjectName}}"
+      - "--label=org.opencontainers.image.revision={{.FullCommit}}"
+      - "--label=org.opencontainers.image.version={{.Version}}"
+    extra_files:
+      - fabio.properties
+  - dockerfile: Dockerfile-goreleaser
+    use: buildx
+    goos: linux
+    goarch: arm64
+    image_templates:
+      - 'fabiolb/fabio:latest-arm64v8'
+      - 'fabiolb/fabio:{{ .Version }}-arm64v8'
+    build_flag_templates:
+      - "--platform=linux/arm64/v8"
+      - "--label=org.opencontainers.image.created={{.Date}}"
+      - "--label=org.opencontainers.image.title={{.ProjectName}}"
+      - "--label=org.opencontainers.image.revision={{.FullCommit}}"
+      - "--label=org.opencontainers.image.version={{.Version}}"
+    extra_files:
+      - fabio.properties
+docker_manifests:
+  - name_template: 'fabiolb/fabio:latest'
+    image_templates:
+      - 'fabiolb/fabio:latest-amd64'
+      - 'fabiolb/fabio:latest-arm64v8'
+  - name_template: 'fabiolb/fabio:{{ .Version }}'
+    image_templates:
+      - 'fabiolb/fabio:{{ .Version }}-amd64'
+      - 'fabiolb/fabio:{{ .Version }}-arm64v8'
